@@ -1,0 +1,40 @@
+//
+// Prefix header for all source files of the 'towerGame' target in the 'towerGame' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "cocos2d.h"
+#endif
+
+#define SHOrientationPortrate
+
+#ifdef SHOrientationLandScape
+#define SCREEN_WIDTH			[[UIScreen mainScreen] bounds].size.height
+#define SCREEN_HEIGHT			[[UIScreen mainScreen] bounds].size.width
+#define SCALE_SCREEN_WIDTH		(SCREEN_WIDTH / 1024)
+#define SCALE_SCREEN_HEIGHT		(SCREEN_HEIGHT / 768)
+#else
+#define SCREEN_WIDTH			[[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT			[[UIScreen mainScreen] bounds].size.height
+#define SCALE_SCREEN_WIDTH		(SCREEN_WIDTH / 768)
+#define SCALE_SCREEN_HEIGHT		(SCREEN_HEIGHT / 1024)
+#endif
+
+//#define SHImageString(str, ext)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	([NSString stringWithFormat:@"%@.%@", (str), (ext)]) : ([NSString stringWithFormat:@"%@@3x.%@", (str), (ext)]); })
+//#define SHImageString(str, ext)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	([NSString stringWithFormat:@"%@.%@", (str), (ext)]) : ([NSString stringWithFormat:@"%@@3x.%@", (str), (ext)]); })
+
+#define SHIAdInt(intstr)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	(intstr) : (intstr * 2.28f); })
+
+#define SHImageString(str)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	([NSString stringWithFormat:@"%@.png", (str)]) : ([NSString stringWithFormat:@"%@@3x.png", (str)]); })
+
+
+#define ipx(intstr)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	(intstr) : (intstr * 2.4f); })
+
+
+#define ipy(intstr)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	(intstr) : (intstr * 2.1333f); })
+
+#define ipxbutton(intstr)	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	(intstr) : (intstr * 0.65); })
+
+#define _max	({ UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?	220 : 528; })
